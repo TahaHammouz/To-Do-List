@@ -175,6 +175,7 @@ input:checked ~ .bubble::after {
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
+  padding: 10px;
 }
 
 .todo-item label {
@@ -190,6 +191,9 @@ input:checked ~ .bubble::after {
 .todo-item .todo-content input {
   color: var(--dark);
   font-size: 1.125rem;
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 .todo-item .actions {
@@ -371,7 +375,8 @@ hr {
 
   .todo-list .todo-item {
     padding: 0rem;
-  }
+    text-align: justify;
+}
   .counter-display {
     padding: 10px;
   }
