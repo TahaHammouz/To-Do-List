@@ -1,4 +1,5 @@
 ## .preview
+<img width="1680" alt="Screenshot 2022-12-01 at 8 44 48 PM" src="https://user-images.githubusercontent.com/53263252/205134818-e2c397f4-a431-4ea1-8c92-c3333763f4d9.png">
 
 ## .features
 - [x] Show tasks list
