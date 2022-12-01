@@ -1,8 +1,8 @@
 ## .preview
-<img width="1680" alt="Screenshot 2022-12-01 at 8 44 48 PM" src="https://user-images.githubusercontent.com/53263252/205134818-e2c397f4-a431-4ea1-8c92-c3333763f4d9.png">
-
+<img width="1679" alt="Screenshot 2022-12-01 at 9 03 14 PM" src="https://user-images.githubusercontent.com/53263252/205138472-a9966990-5eac-4299-9c07-7752c2f71a28.png">
 ## .features
 - [x] Show tasks list
+- [x] Your tasks are searchable 
 - [x] Add new task
 - [x] Complete task
 - [x] Delete task
