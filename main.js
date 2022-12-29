@@ -1,15 +1,16 @@
-let counterDisplayElem = document.querySelector(".counter-display");
-var n = localStorage.getItem("counter");
+const counterDisplayElem = document.querySelector(".counter-display");
+var listCount = localStorage.getItem("counter");
 function updateCounter(count) {
   if (count == null) count = 0;
-  counterDisplayElem.innerHTML = `To-Do : ${count}`;
+  counterDisplayElem.textContent = `To-Do : ${count}`;
 }
 
 window.addEventListener("load", () => {
-  todos = JSON.parse(localStorage.getItem("todos")) || [];
-  const newTodoForm = document.querySelector("#new-todo-form");
-  updateCounter(n);
+  todos = JSON.parse(localStorage.getItem("todos")) ?? [];
+  const newTodoForm = document.getElementById("new-todo-form");
+  updateCounter(todos.length);
 
+  console.log(todos.length);
   newTodoForm.addEventListener("submit", (e) => {
     if (validateForm() == true) {
       const todo = {
@@ -22,20 +23,20 @@ window.addEventListener("load", () => {
 
       e.target.reset();
 
-      localStorage.setItem("counter", ++n);
-      updateCounter(n);
+      localStorage.setItem("counter", todos.length);
+      updateCounter(todos.length);
 
-      DisplayTodos();
+      renderTodos();
 
       e.preventDefault();
     }
   });
 
-  DisplayTodos();
+  renderTodos();
 });
 
-function DisplayTodos() {
-  const todoList = document.querySelector("#todo-list");
+function renderTodos() {
+  const todoList = document.getElementById("todo-list");
   todoList.innerHTML = "";
 
   todos.forEach((todo) => {
@@ -88,10 +89,10 @@ function DisplayTodos() {
       if (todo.done) {
         todoItem.classList.add("done");
       } else {
-        todoItem.classList.remove("done");
+        todoItem.classList.remove("progress");
       }
 
-      DisplayTodos();
+      renderTodos();
     });
     content.addEventListener("click", (e) => {
       const input = content.querySelector("input");
@@ -102,7 +103,7 @@ function DisplayTodos() {
         input.setAttribute("readonly", true);
         todo.content = e.target.value;
         localStorage.setItem("todos", JSON.stringify(todos));
-        DisplayTodos();
+        renderTodos();
       });
     });
 
@@ -112,9 +113,9 @@ function DisplayTodos() {
       document.getElementById("delete").onclick = function () {
         todos = todos.filter((t) => t != todo);
         localStorage.setItem("todos", JSON.stringify(todos));
-        localStorage.setItem("counter", --n);
-        updateCounter(n);
-        DisplayTodos();
+        localStorage.setItem("counter", todos.length);
+        updateCounter(todos.length);
+        renderTodos();
         document.getElementById("id01").style.display = "none";
       };
     });

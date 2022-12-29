@@ -84,24 +84,6 @@ h4 {
   margin-bottom: 1.5rem;
 }
 
-.create-todo .options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.create-todo .options label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -226,6 +208,9 @@ input:checked ~ .bubble::after {
 .todo-item.done .todo-content input {
   text-decoration: line-through;
   color: var(--grey);
+}
+.todo-item.progress .todo-content input {
+  text-decoration: none;
 }
 
 #myInput {
